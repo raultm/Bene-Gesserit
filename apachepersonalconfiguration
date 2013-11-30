@@ -1,0 +1,4 @@
+#!/binb/bash
+username=$(whoami)
+echo "sudo nano /etc/apache2/users/$username.conf"
+success "Created Personal Configuration File"

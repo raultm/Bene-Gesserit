@@ -1,0 +1,4 @@
+#!/bin/bash
+success "php.ini not initialized"
+echo "sudo cp -p /private/etc/php.in.default /private/etc/php.ini"
+success "Created php.ini"

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+function file_exists(){
+  filepath=$1
+  if [ -f $filepath ];then
+    # success $filepath EXISTS
+    return 0
+  else
+    # error $filepath DOESNT EXISTS
+    return 1
+  fi
+}
+
+function file_replace_content(){
+  filepath=$1
+  find=$2
+  replace=$3
+  
+  cmd="sed -ie s/$find/$replace/g $filepath"
+  # echo $cmd
+  result=$($cmd)
+  if $result;then
+    # Command works
+    return 0
+  else
+    # Command not work
+    return 1
+  fi
+}

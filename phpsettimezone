@@ -1,0 +1,8 @@
+#!/bin/bash
+# sudo nano /private/etc/php.ini
+# cambiar 
+# ;date.timezone = 
+# por
+# date.timezone = Europe/Madrid
+warning "Timezone is not Setted"
+success "Set dat.timezone to Europe/Madrid"

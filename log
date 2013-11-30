@@ -1,0 +1,51 @@
+#!/bin/bash
+# FONT COLORS
+RED=$'\e[31m'
+GREEN=$'\e[32m'
+YELLOW=$'\e[33m'
+BLUE=$'\e[34m'
+# NONE
+END=$'\e[0m'
+
+# TEXT EFFECTS
+BOLD=$
+BOLD=$'\e[01m'
+UNDERSCORE=$'\e[04m'
+BLINK=$'\e[05m'
+NORMAL=$'\e[00m'
+
+
+function success(){
+  echo $GREEN$1$END
+}
+
+function warning(){
+  echo $YELLOW$1$END
+}
+
+function info(){
+  echo $BLUE$1$END
+}
+
+function error(){
+  echo $RED$1$END
+}
+
+function title(){
+#  echo "------------"
+  echo $BOLD$1$NORMAL
+#  echo "------------"
+}
+
+function bold(){
+  echo $BOLD$1$NORMAL
+}
+
+function underscore(){
+  echo $UNDERSCORE$1$NORMAL
+}
+
+function blink(){
+  echo $BLINK$1$NORMAL
+}
+

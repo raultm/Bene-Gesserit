@@ -1,0 +1,9 @@
+#!/bin/bash
+# mkdir /Users/raulete/tmp
+# sudo nano /private/etc/php.ini
+# cambiar
+# ;session.save_path = 
+# por
+# session.save_path = "/Users/raulete/tmp"
+success "Created tmp folder in users' folder"
+success "Set session.save_path attribute with folder created before"

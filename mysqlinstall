@@ -1,0 +1,5 @@
+#!/bin/bash
+# Download MySQL packages and execute
+# sudo /usr/local/mysql/bin/mysqladmin –u root password ‘root’
+error "Need to download&install MySQL packages"
+error "Dependency to mysql packages installed and added to PATH"

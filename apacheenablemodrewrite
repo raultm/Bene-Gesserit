@@ -1,0 +1,34 @@
+#!/bin/bash
+source fileutils
+APACHEFILEPATH="/etc/apache2/httpd.conf"
+MODLINE="LoadModule rewrite_module libexec/apache2/mod_rewrite.so"
+MODLINECOMMENTED="#"$MODLINE
+
+if file_exists $APACHEFILEPATH; then
+  success 'Exists Apache httpd.conf file'
+else
+  error 'Apache httpd.conf file doesnt exists'
+fi
+
+# Check if line module rewrite_module exists
+result=$(grep "$MODLINE" $APACHEFILEPATH)
+#echo $result
+
+if [ "$result" == "$MODLINE" ]
+then
+  success "Mod Rewrite in Apache Conf"
+else
+  error "no Mod Rewrite in Apache Conf"
+fi
+
+# Check if Module rewrite is commented
+result=$(grep "$MODLINECOMMENTED" $APACHEFILEPATH)
+#echo $result
+
+if [ "$result" == "$MODLINECOMMENTED" ]
+then
+  error "Mod Rewrite IS DISABLED"
+else
+  success "Mod Rewrite IS ENABLED"
+fi
+

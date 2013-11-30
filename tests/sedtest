@@ -1,0 +1,22 @@
+#!/bin/bash
+cat sedsource > sedtmp
+echo FUENTE
+cat sedtmp
+if sed -ie 's/hola/hello/g' sedtmp;then
+  echo "True"
+else
+  echo "False"
+fi
+#echo "SEDTMP"
+echo "CAMBIAR HOLA POR HELLO"
+cat sedtmp
+
+
+cat sedsource > sedtmp
+if sed -ie 's/fail/hello/g' sedtmp;then
+  echo "True"
+else
+  echo "False"
+fi
+echo "CAMBIAR FAIL POR HELLO"
+cat sedtmp

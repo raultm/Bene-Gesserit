@@ -1,0 +1,18 @@
+#!/bin/bash
+clear
+source log
+source fileutils
+
+title FILE_REPLACE_CONTENT
+info 'Check function (fileutils)'
+
+filetest="filereplacetest"
+echo "Hola hola adios Adios \$find" > $filetest 
+
+title Before
+cat $filetest
+
+file_replace_content $filetest "hola" "raulete"
+
+title After
+cat $filetest

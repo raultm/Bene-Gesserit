@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Cambiar Usuario apache
+# Check Default Values in HttpConf
+# User _www
+USERLINE="User _www"
+GROUPLINE="Group _www"
+
+result=$(grep "$USERLINE" $APACHEFILEPATH)
+#echo $result
+if [ "$result" == "$USERLINE" ]
+then
+  success "Default User in Apache"
+else
+  error "Custom User in Apache"
+fi
+
+result=$(grep "$GROUPLINE" $APACHEFILEPATH)
+#echo $result
+if [ "$result" == "$GROUPLINE" ]
+then
+  success "Default Group in Apache"
+else
+  error "Custom Group in Apache"
+fi	
+
+currentuser=$(whoami)
+echo "Username $currentuser"
+#echo "What's your username?"
+#printf "($currentuser): "
+#read $user
+
+success "Changed 'User _www' to 'User $currentuser'"
+success "Changed 'Group _www' to 'Group staff'"

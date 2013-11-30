@@ -1,0 +1,32 @@
+#!/bin/bash
+clear
+source log
+source fileutils
+
+title APACHE
+info 'Enable Mod Rewrite (apacheenablemodrewrite)'
+source apacheenablemodrewrite
+info 'Change Apache User & Group (apachechangeuserandgroup)'
+source apachechangeuserandgroup
+info 'Create Personal Configuration (apachepersonalconfiguration)' 
+source apachepersonalconfiguration
+
+title PHP
+info 'Create php.ini (phpcreateini)' 
+source phpcreateini
+info 'Set timezone (phpsettimezone)' 
+source phpsettimezone
+info 'Create Personal Folder to Sessions (phpsetsessiontmpfolder)' 
+source phpsetsessionstmpfolder
+
+title APACHE
+info 'Restart Apache (apacherestart)' 
+source apacherestart
+
+title MYSQL
+info 'Install (mysqlinstall)' 
+source mysqlinstall
+
+title APACHE
+info 'Add subdomain (apacheaddsubdomain)' 
+source apacheaddsubdomain
