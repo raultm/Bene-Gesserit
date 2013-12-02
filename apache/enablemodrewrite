@@ -1,8 +1,11 @@
 #!/bin/bash
+source log
 source fileutils
 APACHEFILEPATH="/etc/apache2/httpd.conf"
 MODLINE="LoadModule rewrite_module libexec/apache2/mod_rewrite.so"
 MODLINECOMMENTED="#"$MODLINE
+
+info 'Enable Mod Rewrite (apacheenablemodrewrite)'
 
 if file_exists $APACHEFILEPATH; then
   success 'Exists Apache httpd.conf file'
@@ -32,3 +35,4 @@ else
   success "Mod Rewrite IS ENABLED"
 fi
 
+exit

@@ -1,0 +1,42 @@
+#!/bin/bash
+source log
+
+function askbefore(){
+	CMD=$1
+	ASK=$2
+	DEFAULTANSWER=$3
+	
+	# Comprobamos que ha pasado comando
+	if [ "$CMD" == "" ]; then
+		echo "No se ha seleccionado comando a ejecutar"
+	fi
+	
+	# Comprobamos que ha pasado pregunta al usuario
+	if [ "$ASK" == "" ]; then
+		ASK="¿Que te parece la movida?"
+	fi
+	
+	# Si no ha pasado valor por defecto lo seteamos con y
+	if [ "$DEFAULTANSWER" == "" ]; then
+		DEFAULTANSWER="y"
+	fi
+	
+	# Imprimimos la pregunta, mostrando el valor por defecto
+	echo "------------------------------------------------------"
+	printf "$ASK : ($DEFAULTANSWER) "
+	read option
+	
+	# Si el usuario no introduce nada tomamos la respuesta por defecto
+	if [ "$option" == "" ]; then
+		ANSWER=$DEFAULTANSWER
+	else
+		ANSWER=$option
+	fi
+	
+	echo $ANSWER
+	
+	# Si ha elegido "y" ejecutamos el comando
+	if [ "$ANSWER" == "y" ]; then
+		($CMD)
+	fi
+}

@@ -1,5 +1,9 @@
 #!/bin/bash
 # printf "Give name of project(no spaces)"
 # read $projectname
+source log
+source fileutils
+
+info 'Add subdomain (apacheaddsubdomain)' 
 warning "Will create VirtualHost in Apache http://project.app in ~/Sites/project. Need to modify hosts file & restart Apache"
 

@@ -5,5 +5,9 @@
 # ;session.save_path = 
 # por
 # session.save_path = "/Users/raulete/tmp"
+source log
+source fileutils
+
+info 'Create Personal Folder to Sessions (phpsetsessiontmpfolder)' 
 success "Created tmp folder in users' folder"
 success "Set session.save_path attribute with folder created before"

@@ -4,5 +4,9 @@
 # ;date.timezone = 
 # por
 # date.timezone = Europe/Madrid
+source log
+source fileutils
+
+info 'Set timezone (phpsettimezone)' 
 warning "Timezone is not Setted"
 success "Set dat.timezone to Europe/Madrid"

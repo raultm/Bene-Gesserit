@@ -2,31 +2,25 @@
 clear
 source log
 source fileutils
+source consoleutils
+
+user=$(whoami)
 
 title APACHE
-info 'Enable Mod Rewrite (apacheenablemodrewrite)'
-source apacheenablemodrewrite
-info 'Change Apache User & Group (apachechangeuserandgroup)'
-source apachechangeuserandgroup
-info 'Create Personal Configuration (apachepersonalconfiguration)' 
-source apachepersonalconfiguration
+askbefore apache/enablemodrewrite 		"¿Quieres habilitar mod_rewrite?"
+askbefore apache/changeuserandgroup 	"¿Quieres cambiar el usuario/grupo de Apache a $user/staff ?"
+askbefore apache/personalconfiguration 	"¿Quieres crear un archivo de usuario personal para Apache?"
 
 title PHP
-info 'Create php.ini (phpcreateini)' 
-source phpcreateini
-info 'Set timezone (phpsettimezone)' 
-source phpsettimezone
-info 'Create Personal Folder to Sessions (phpsetsessiontmpfolder)' 
-source phpsetsessionstmpfolder
+askbefore php/createini 				"¿Quieres crear el archivo php.ini?"
+askbefore php/settimezone 				"¿Quieres definir el timezone?"
+askbefore php/setsessionstmpfolder 		"¿Cambiar la carpeta donde guarda las sesiones PHP?"
 
 title APACHE
-info 'Restart Apache (apacherestart)' 
-source apacherestart
+askbefore apache/restart 				"¿Reiniciar Apache?"
 
 title MYSQL
-info 'Install (mysqlinstall)' 
-source mysqlinstall
+askbefore mysql/install 				"¿Instalar MySQL?"
 
 title APACHE
-info 'Add subdomain (apacheaddsubdomain)' 
-source apacheaddsubdomain
+askbefore apache/addsubdomain 			"¿Quieres añadir un subdominio?"

@@ -1,0 +1,7 @@
+#!/bin/bash
+# sudo apachectl restart
+source log
+source fileutils
+
+info 'Restart Apache (apacherestart)' 
+echo "sudo apachectl restart"

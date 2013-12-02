@@ -1,10 +1,15 @@
 #!/bin/bash
+source log
+source fileutils
 
 # Cambiar Usuario apache
 # Check Default Values in HttpConf
 # User _www
+APACHEFILEPATH="/etc/apache2/httpd.conf"
 USERLINE="User _www"
 GROUPLINE="Group _www"
+
+info 'Change Apache User & Group (apachechangeuserandgroup)'
 
 result=$(grep "$USERLINE" $APACHEFILEPATH)
 #echo $result

@@ -33,6 +33,7 @@ function error(){
 
 function title(){
 #  echo "------------"
+  echo ""
   echo $BOLD$1$NORMAL
 #  echo "------------"
 }
